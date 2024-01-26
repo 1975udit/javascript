@@ -12,6 +12,6 @@ console.log(id1 == id2); // it return False
 
  let obj = { name:"Udit", age:21}                                //OBJECT
 
- function(){                                                    //FUNCTION
+ const fun =  function() {                                                    //FUNCTION
     console.log("Hello");
  }
