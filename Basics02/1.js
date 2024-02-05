@@ -27,3 +27,14 @@ console.log(arr.indexOf(6))  // to check the index
 let newArr  = arr.join();
 console.log(newArr);
 
+// Slice and Splice
+const na1 = arr.slice(2,5);
+// console.log(na1);
+// it make no changes in the original array
+
+const na2 = arr.splice(2,5);
+// console.log(na2);
+// It make changes in original val it del them from original
+// it also includes the outer range index mean it also includes the element at index 5.
+
+
