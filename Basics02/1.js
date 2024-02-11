@@ -31,10 +31,29 @@ console.log(newArr);
 const na1 = arr.slice(2,5);
 // console.log(na1);
 // it make no changes in the original array
-
-const na2 = arr.splice(2,5);
+ 
+// const na2 = arr.splice(2,5);
 // console.log(na2);
 // It make changes in original val it del them from original
 // it also includes the outer range index mean it also includes the element at index 5.
 
+const marval = ["thor", "Ironman", "Loki"]
+const dc = ["batman", "superman", "flash"]
+// marval.push(dc);
+console.log(marval) // whole dc array becomes the 4th memeber of the marval array
+
+// for adding elements of one array to other 
+const all = marval.concat(dc)
+console.log(all);
+// this concat function do not modify the existing arrays it return new array as a result
+
+// SPREAD Function (Example of glass)
+const all_new = [...marval, ...dc];
+// console.log(all_new);
+// Advantage of spread over concat os that it can take as many arrays as you went to join
+
+// Now we come to case where we went to siplify the array
+const d = [1,2,3,[3,4,[5,6]],9 ,8]; // array like this
+const simple = d.flat(Infinity)
+// console.log(simple)
 
