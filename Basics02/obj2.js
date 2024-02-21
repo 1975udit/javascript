@@ -58,3 +58,30 @@ console.log(Object.entries(app1)); // this will return array of arrays
 
 // To ask from an obj for having that property or not 
 console.log(Object.hasOwnProperty("name"))  // return bool 
+
+// O B J E C T  -> 3 [J S O N]
+
+// Destructuring
+const course = {
+    name : "js",
+    price : 999,
+    student : "udit"
+}
+// console.log(course.student); // first way
+
+const {student : st} = course;
+console.log(st); // second way this reduces the code length and increases readibility
+
+// json -> javascript object Notation  
+// {
+//     "name" : "udit",
+//     "id" : "23",
+//     "age" : "21" 
+// }  
+// all keys and values are in the form of strings 
+
+[
+    {},
+    {},
+    {}
+]
