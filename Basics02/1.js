@@ -57,3 +57,16 @@ const d = [1,2,3,[3,4,[5,6]],9 ,8]; // array like this
 const simple = d.flat(Infinity)
 // console.log(simple)
 
+// to check coming data is an array or not
+console.log(Array.isArray("udit"));
+
+// to convert any coming data into an array
+console.log(Array.from("udit"));
+// console.log(Array.from({name : "udit"}))   IMP     "this will return empty array"
+
+// to make an array from variables
+let s1 = 100;
+let s2 = 200;
+let s3 = 300;
+console.log(Array.of(s1,s2,s3));
+
