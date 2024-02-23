@@ -47,14 +47,14 @@ const user = {
   name : "udit",
   age : 21
 }
-function app1(Object){
-   console.log(`I am ${Object.name} and i am ${Object.age} year old`);
+function app1(getObject){
+   console.log(`I am ${getObject.name} and i am ${getObject.age} year old`);
 }
 app1(user);
 
 // how to pass an array
 const arr = [100,200,300,400]
-function secondVal(array){
-     console.log(`Second Value of this array is ${array[1]}`)
+function secondVal(getarray){
+     console.log(`Second Value of this array is ${getarray[1]}`)
 }
 secondVal(arr);
