@@ -55,7 +55,7 @@ console.log(obj());
 })();
 
 // if you use this no reguirement of calling that function
-// this is used to remove the global decleration polution
+// this is used to remove the global decleration pollution
 
 // similarly for arrow function 
 ( () =>  (console.log("I am a arrow IIFE"))
