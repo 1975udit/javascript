@@ -25,7 +25,7 @@ if(  false /*condition*/ ){
 //         .
 //         .
 //     default :
-//     // if no value matched 
+//     // if no value matched .
 // }
 
 // note : if we not use break then whole code will be executed from where condition match EXCEPT "DEFAULT"
