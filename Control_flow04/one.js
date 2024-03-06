@@ -33,3 +33,12 @@ if(  false /*condition*/ ){
 // truthy and falsy values (if cond)
 // falsy values : false, 0, -0, BigInt 0n, "", null, undefined, NaN 
 // truthy values : "0", 'false', " ", [], {}, function(){}
+
+// Nullish Coalescing Operator (??) -> for(Null and undefined) 
+let val1,val2;
+val1 = 5 ?? 10
+// console.log(val1)
+val2 = null ?? 10; // it is like a check operator for values 
+console.log(val2);
+
+
