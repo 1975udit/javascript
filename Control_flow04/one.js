@@ -38,7 +38,11 @@ if(  false /*condition*/ ){
 let val1,val2;
 val1 = 5 ?? 10
 // console.log(val1)
-val2 = null ?? 10; // it is like a check operator for values 
+val2 = null ?? 10; // it is like a check operator for values (only for null and undefined)
 console.log(val2);
+
+// terniary Operator
+// condition ? true : false
+5>3 ? console.log("true") : console.log("false");
 
 
