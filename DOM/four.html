@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121;color: aliceblue;">
+    <ul class="languages">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+    
+    // Brute Force
+   function addLang(langName){
+    const li = document.createElement('li')
+    li.innerHTML = langName;
+    document.querySelector(".languages").append(li)
+   }
+
+   addLang("python");
+   addLang("HTML")
+
+   // optimized
+   function addOptiLang(langName){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode("python"))
+    document.querySelector(".languages").append(li)
+   }
+   // what is the optimization here ?
+   // we try not to use .innerHtml function bcz it increases traversing part 
+
+// How to Edit values ? 
+
+const lang = document.querySelector("li:nth-child(2)")                // [I M P]
+// lang.innerHTML = "mojo"
+const newLi = document.createElement("li")
+newLi.textContent = "mojo"
+lang.replaceWith(newLi)
+
+// other way
+const last  = document.querySelector("li:last-child")
+last.outerHTML = "<li>SQL</li>"
+
+// how to remove elements 
+const rem  = document.querySelector("li:nth-child(2)")
+rem.remove()
+
+</script>
+</html>
