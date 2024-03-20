@@ -41,7 +41,7 @@
 
         document.querySelector("#owl").addEventListener("click", function(e){
             console.log("Owl is Clicked")
-            e.stopPropagation()  // event not bubble to upper events
+            // e.stopPropagation()  // event not bubble to upper events
         } , false)
         
     // (about the third variable)
@@ -56,6 +56,20 @@
         console.log("Google is clicked")
         e.stopPropagation()
     }, false)
+
+
+    document.querySelector("#images").addEventListener("click",
+    function(e){
+        console.log(e.target.tagName)
+        // let say i went to remove this node than i can use
+
+        if (e.target.tagName === "IMG") {
+            const remove_element = e.target.parentNode
+            remove_element.remove()
+        }
+  
+
+    },false)
 
 </script>
 </html>
