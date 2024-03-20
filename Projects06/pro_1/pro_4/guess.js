@@ -13,8 +13,8 @@ let num_guess = 1;
 let play_game = true;
 
 if(play_game){
-    submit.addEventListener("click",function(e){
-        e.defaultPrevented()
+    submit.addEventListener('click',function(e){
+        e.preventDefault()
         const guess = parseInt(userInput.value)
         validGuess(guess);
     })
@@ -58,15 +58,36 @@ function display(message){
 
 function cleanUp(guess){
       userInput.value = ""
-      guessSlots.innerHTML += `${guess }`
+      guessSlots.innerHTML += `${guess} `
       num_guess++;
       remining.innerHTML =`${11 - num_guess}`
 }
 
+// function to start new game -- in that we reset the values
 function newGame(){
+    const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click', function (e) {
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    prev_Guess = [];
+    num_guess = 1;
+    guessSlots.innerHTML = '';
+    remining.innerHTML = `${11 - num_guess} `;
+    userInput.removeAttribute('disabled');
+    startOver.removeChild(p);
 
+    playGame = true;
+  });
+ 
 }
+
 
 function endGame(){
-
+  userInput.value = ""
+  userInput.setAttribute("disabled", "")
+  p.classList.add('button');
+  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  startOver.appendChild(p);
+  play_Game = false;
+  newGame();
 }
+
