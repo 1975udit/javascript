@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Radha Radha</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("Ram Ram JI")
+    // },3000)
+
+    // setTimeout(function defination or reference , time(in millisec))
+    const get_heading  = document.querySelector("h1")
+    const greet = function(){
+          get_heading.innerHTML = "Ram Ram ji"
+    }
+    const changeMe =  setTimeout(greet , 3000);
+
+    // now to repeat this task after set interval of time like in clock 
+    // setInterval(function(){
+    //     console.log("Radha Radha")
+    // } , 2000)
+
+    // to stop this set Interval function we have 
+    // clearTimeout(refference)
+    //    clearTimeout(changeMe)
+
+    // lets do this thing using events 
+    document.querySelector("#stop").addEventListener("click" , function(){
+        clearTimeout(changeMe)
+    })
+</script>
+</html>
