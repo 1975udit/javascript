@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+    <style>
+        div{
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            display: flex;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- note => read about states in AJEX programing for api --> 
+    <div id="main">
+        <img id="img" src="" alt="">
+        <p id="follower"></p>
+    </div>
+</body>
+<script>
+    let fol;
+    let image;
+    let data;
+    const url = 'https://api.github.com/users/hiteshchoudhary'
+    const superman = new XMLHttpRequest()  // it is a class or method and it contains all the states like o - unsent, 1- sent, etc
+    superman.open('Get', url)  // this function requires one extra function to call itself that is sent
+    superman.onreadystatechange = function (){
+        console.log(superman.readyState)
+        if (superman.readyState === 4) {
+            // console.log(this.responseText) to the the whole response of your request
+            data = JSON.parse(this.responseText)
+            // console.log(data.followers) you can't access this data as a object bcz it is a string
+            console.log(typeof data) // most of the time you get the response in string type
+            // so to solve this problem we convert the type using JSON.parse
+            fol = data.followers
+            image = data.avatar_url
+            const a = document.querySelector("#img")
+            const b = document.querySelector("#follower")
+            b.innerHTML = fol;
+            a.src = image
+        }
+    }
+
+    superman.send()
+    // console.log(superman.readyState) // function to check the current states
+
+    
+</script>
+</html>
