@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour</title>
+</head>
+<body style="background-color: #212121; color: blanchedalmond;">
+    <h1>Let's make the life colourful</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const color_generator = function(){
+        const hex = "0123456789ABCDEF"
+        let color ="#"
+        for(let i=0; i<6; i++){
+            color += hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+    }
+    let mcb = null;
+    const start_changing = function(){
+        if (mcb === null) {
+            mcb = setInterval(color,1000);
+        }
+        function color(){
+            document.body.style.backgroundColor = color_generator();
+        }
+    }
+    const stop_changing = function(){
+        clearInterval(mcb);
+        mcb = null;
+    }
+
+    document.querySelector("#start").addEventListener("click", start_changing)
+    document.querySelector("#stop").addEventListener("click", stop_changing)
+
+</script>
+</html>
