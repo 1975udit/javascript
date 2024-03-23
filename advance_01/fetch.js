@@ -5,4 +5,5 @@ fetch("https://api.github.com/users/hiteshchoudhary")
     console.log(data);
 }).catch(function(error){
     console.log(error)
-})
+}) 
+// continue
