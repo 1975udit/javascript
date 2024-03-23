@@ -51,7 +51,18 @@
 
     superman.send()
     // console.log(superman.readyState) // function to check the current states
+    
 
+    // checking some stuff 
+    const batman = new XMLHttpRequest()
+    batman.open('Get', "https://jsonplaceholder.typicode.com/users")
+    batman.onreadystatechange = function(){
+        if(batman.readyState == 4){
+            const data_2 = JSON.parse(batman.responseText);
+            console.log(data_2)
+        }
+    }
+    batman.send()
     
 </script>
 </html>
