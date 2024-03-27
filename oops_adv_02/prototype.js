@@ -39,7 +39,7 @@ teacher.__proto__ = user  // inheritance
 // console.log(teachingSupport.name)  multilevel inheritance 
  
 // modern Syntex [I M P]
-// Object.setPrototypeOf(teacher,user)  // first wala object second wale ki property access kae leta hai 
+// Object.setPrototypeOf(teacher,user)  // first wala object second wale ki property access kar leta hai 
 
 // PROBLEM
  
