@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #212121;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+    function outer(){
+        let username = 'udit'
+        function inner() {
+            console.log(username) // but here we get the access of username [ Lexical Scoping ]
+        }
+        inner()
+    }
+    outer()
+    // console.log(username) // it is not accessable outside the function scope
+
+
+   // ------------------- CLOSURE --------------------------//
+   
+   function outer2(){
+    const name = "udit"
+    function sayMyName(){
+        console.log(name)
+    }
+    return sayMyName  // here we are passing the whole lexical scope of that function
+   }
+   const fun = outer2()  
+   fun();
+
+</script>
+
+<script>
+    // practical example of closure
+    // document.querySelector("#orange").addEventListener('click' , function(){
+    //     document.body.style.backgroundColor = "orange"
+    // })
+    //  similarly for green but with another syntex
+
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = "green"
+    // }
+
+    // Now let say you have to make 1000 buttons with color given in an array 
+
+    function handler(color){
+             return function colour(){
+                document.body.style.backgroundColor = `${color}`
+            }
+    }
+
+    document.querySelector("#orange").onclick = handler("orange")
+    document.querySelector("#green").onclick = handler("green")
+
+</script>
+</html>
