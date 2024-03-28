@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Clicked</button>
+</body>
+<script>
+    class react{
+        constructor(){
+            this.library = "react"
+            this.server = "https://localhost:300"
+            // requirement
+            document.querySelector("button").addEventListener("click", this.handleClicked.bind(this))
+
+        } // bind keyword is used to bind the current context with the function calling so
+        // the function can access the properties of the function which is calling the other
+        handleClicked(){
+            console.log("Button Clicked");
+            console.log(this.server);
+            console.log(this);
+        }
+    }
+    const app = new react()
+</script>
+</html>
